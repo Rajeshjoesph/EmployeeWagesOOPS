@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EmployeeWagesOOPS
+﻿namespace EmployeeWagesOOPS
 {
     public class EmployeeWage
     {
         public static int RATEPERHOUR = 20;
-        
+        public static int ISFULLTIME = 2;
+        public static int ISPARTTIME = 1;
         public static bool Attendance()
         {
             int isPresent = 1;
             Random random = new Random();
-            int empCheck = random.Next(0, 2);
+            int empCheck = random.Next(0,2);
             if (empCheck == isPresent)
             {
                 return true;
@@ -27,10 +22,17 @@ namespace EmployeeWagesOOPS
         public static int dailyWages()
         {
             int workHours = 0;
-            bool empData=Attendance();
-            if (empData == true)
+            Random random = new Random();
+            int empCheck = random.Next(0, 3);
+            if (empCheck == ISFULLTIME)
             {
+                Console.WriteLine("Employee Full Time Wage: ");
                 workHours = 8;
+            }
+            else if (empCheck == ISPARTTIME)
+            {
+                Console.WriteLine("Employee Part Time Wage: ");
+                workHours = 4;
             }
             else
             {
@@ -38,8 +40,6 @@ namespace EmployeeWagesOOPS
             }
             int dailyWage = workHours * RATEPERHOUR;
             return dailyWage;
-
         }
-
     }
 }

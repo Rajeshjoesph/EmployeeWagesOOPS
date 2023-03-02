@@ -10,6 +10,8 @@
             // Employee Daily Wages
             int dayWage=EmployeeWage.dailyWages();
             Console.WriteLine("\nEmployee Wages per Day:" + dayWage);
+            // Employee Part Time Wages
+            //Console.WriteLine(EmployeeWage.dailyWages);
         }
     }
 }
