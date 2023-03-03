@@ -1,4 +1,10 @@
-﻿namespace EmployeeWagesOOPS
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EmployeeWagesOOPS
 {
     public class EmployeeWage
     {
@@ -49,6 +55,28 @@
             }
             int dailyWage = workHours * RATEPERHOUR;
             return dailyWage;
+        }
+        public static int MonthlyWage()
+        {
+            int workHours = 0;
+            switch (empCheck)
+            {
+                case ISFULLTIME:
+                    workHours = 8;
+
+                    break;
+                case ISPARTTIME:
+                    workHours = 4;
+                    break;
+
+                default:
+                    workHours = 0;
+                    break;
+
+            }
+            int dailyWage = workHours * RATEPERHOUR;
+            int monthlyWage = dailyWage * MAX_WORK_DAYS;
+            return monthlyWage;
         }
     }
 }
