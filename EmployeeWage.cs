@@ -3,13 +3,14 @@
     public class EmployeeWage
     {
         public static int RATEPERHOUR = 20;
-        public static int ISFULLTIME = 2;
-        public static int ISPARTTIME = 1;
+        public const int ISFULLTIME = 2;
+        public const int ISPARTTIME = 1;
+        public static Random random = new Random();
+        public static int empCheck = random.Next(0, 3);
+
         public static bool Attendance()
         {
             int isPresent = 1;
-            Random random = new Random();
-            int empCheck = random.Next(0,2);
             if (empCheck == isPresent)
             {
                 return true;
@@ -19,11 +20,9 @@
                 return false;
             }
         }
-        public static int dailyWages()
+        /*public static int DailyWages()
         {
             int workHours = 0;
-            Random random = new Random();
-            int empCheck = random.Next(0, 3);
             if (empCheck == ISFULLTIME)
             {
                 Console.WriteLine("Employee Full Time Wage: ");
@@ -37,6 +36,28 @@
             else
             {
                 workHours = 0;
+            }
+            int dailyWage = workHours * RATEPERHOUR;
+            return dailyWage;
+        }*/
+        public static int SwitchCase()
+        {
+            int workHours = 0;
+            switch (empCheck)
+            {
+                case ISFULLTIME:
+                     workHours=8;
+
+                    break;
+                case ISPARTTIME:
+                     workHours = 4;
+                    break;
+
+                default:
+                     workHours=0;
+                    break;
+
+
             }
             int dailyWage = workHours * RATEPERHOUR;
             return dailyWage;

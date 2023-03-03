@@ -8,7 +8,7 @@
             bool attendance = EmployeeWage.Attendance();
             Console.WriteLine("Employee is attendence is :" + attendance);
             // Employee Daily Wages
-            int dayWage=EmployeeWage.dailyWages();
+            int dayWage=EmployeeWage.SwitchCase();
             Console.WriteLine("\nEmployee Wages per Day:" + dayWage);
             // Employee Part Time Wages
             //Console.WriteLine(EmployeeWage.dailyWages);
