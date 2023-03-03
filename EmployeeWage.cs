@@ -14,69 +14,33 @@ namespace EmployeeWagesOOPS
         public static Random random = new Random();
         public static int empCheck = random.Next(0, 3);
         public static int MAX_WORK_DAYS = 20;
-
-        public static int DailyWages()
+        public static int TotalHours()
         {
-            int workHours = 0;
-            if (empCheck == ISFULLTIME)
-            {
-                Console.WriteLine("Employee Full Time Wage: ");
-                workHours = 8;
-            }
-            else if (empCheck == ISPARTTIME)
-            {
-                Console.WriteLine("Employee Part Time Wage: ");
-                workHours = 4;
-            }
-            else
-            {
-                workHours = 0;
-            }
-            int dailyWage = workHours * RATEPERHOUR;
-            return dailyWage;
-        }
-        public static int SwitchCase()
-        {
-            int workHours = 0;
-            switch (empCheck)
-            {
-                case ISFULLTIME:
-                    workHours = 8;
+            int maxWorkMounth = 10;
+            int workHours = 0,totWages=0, monthlyWage=0,totHours=0,totDays=0;
+            while(workHours <= MAX_WORK_DAYS && totDays<= maxWorkMounth) {
+                totDays++;
+                switch (empCheck)
+                {
+                    case ISFULLTIME:
+                        workHours = 8;
 
-                    break;
-                case ISPARTTIME:
-                    workHours = 4;
-                    break;
+                        break;
+                    case ISPARTTIME:
+                        workHours = 4;
+                        break;
 
-                default:
-                    workHours = 0;
-                    break;
+                    default:
+                        workHours = 0;
+                        break;
+
+                }
+                totHours = totHours + workHours;
+
 
             }
-            int dailyWage = workHours * RATEPERHOUR;
-            return dailyWage;
-        }
-        public static int MonthlyWage()
-        {
-            int workHours = 0;
-            switch (empCheck)
-            {
-                case ISFULLTIME:
-                    workHours = 8;
-
-                    break;
-                case ISPARTTIME:
-                    workHours = 4;
-                    break;
-
-                default:
-                    workHours = 0;
-                    break;
-
-            }
-            int dailyWage = workHours * RATEPERHOUR;
-            int monthlyWage = dailyWage * MAX_WORK_DAYS;
-            return monthlyWage;
+            totWages = totHours * RATEPERHOUR;
+            return totWages;
         }
     }
 }
