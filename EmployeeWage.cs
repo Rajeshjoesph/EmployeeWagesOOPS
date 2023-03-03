@@ -7,20 +7,9 @@
         public const int ISPARTTIME = 1;
         public static Random random = new Random();
         public static int empCheck = random.Next(0, 3);
+        public static int MAX_WORK_DAYS = 20;
 
-        public static bool Attendance()
-        {
-            int isPresent = 1;
-            if (empCheck == isPresent)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        /*public static int DailyWages()
+        public static int DailyWages()
         {
             int workHours = 0;
             if (empCheck == ISFULLTIME)
@@ -39,24 +28,23 @@
             }
             int dailyWage = workHours * RATEPERHOUR;
             return dailyWage;
-        }*/
+        }
         public static int SwitchCase()
         {
             int workHours = 0;
             switch (empCheck)
             {
                 case ISFULLTIME:
-                     workHours=8;
+                    workHours = 8;
 
                     break;
                 case ISPARTTIME:
-                     workHours = 4;
+                    workHours = 4;
                     break;
 
                 default:
-                     workHours=0;
+                    workHours = 0;
                     break;
-
 
             }
             int dailyWage = workHours * RATEPERHOUR;
